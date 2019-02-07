@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ui.BotonesCRUD">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="614" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="fa1a8" class="javax.swing.JButton" binding="nuevoButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Nuevo"/>
+        </properties>
+      </component>
+      <component id="5b71b" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Cancelar"/>
+        </properties>
+      </component>
+      <component id="6e835" class="javax.swing.JButton" binding="guardarButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Guardar"/>
+        </properties>
+      </component>
+      <component id="51062" class="javax.swing.JButton" binding="eliminarButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Eliminar"/>
+        </properties>
+      </component>
+      <component id="e0bf4" class="javax.swing.JButton" binding="eliminarTodoButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Eliminar Todo"/>
+        </properties>
+      </component>
+      <component id="b159c" class="javax.swing.JButton" binding="deshacerButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Deshacer"/>
+        </properties>
+      </component>
+      <component id="f63dd" class="javax.swing.JButton" binding="modificarButton" default-binding="true">
+        <constraints/>
+        <properties>
+          <text value="Modificar"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
