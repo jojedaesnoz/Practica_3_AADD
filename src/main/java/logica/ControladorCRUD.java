@@ -1,12 +1,15 @@
 package logica;
 
+import ui.BarraBusqueda;
 import ui.BotonesCRUD;
+import ui.Vista;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.function.Function;
 
 import static ui.BotonesCRUD.Accion;
 
@@ -15,6 +18,10 @@ public abstract class ControladorCRUD<T> implements ActionListener, MouseListene
     private final BotonesCRUD botonesCRUD;
     private final JList<T> lista;
     private Controlador controlador;
+    private BarraBusqueda busqueda;
+    private Function<Vista, T> extractorPojo;
+
+    // TODO: metodo cargar pojo (consumer)
 
     public ControladorCRUD(BotonesCRUD botonesCRUD, JList<T> lista) {
         this.botonesCRUD = botonesCRUD;
@@ -22,6 +29,18 @@ public abstract class ControladorCRUD<T> implements ActionListener, MouseListene
 
         botonesCRUD.botones.forEach(boton -> boton.addActionListener(this));
         lista.addMouseListener(this);
+    }
+
+    public Function<Vista, T> getExtractorPojo() {
+        return extractorPojo;
+    }
+
+    public void setExtractorPojo(Function<Vista, T> extractorPojo) {
+        this.extractorPojo = extractorPojo;
+    }
+
+    public T extraerPojo(Vista entrada) {
+        return extractorPojo.apply(entrada);
     }
 
     public ControladorCRUD(BotonesCRUD botonesCRUD, JList<T> lista, Controlador controlador) {

@@ -5,16 +5,17 @@ import java.util.List;
 public interface Modelo<T> {
 
     // CREATE
-    void nuevo(T dato);
+    boolean guardar(T dato);
 
     // READ
     List<T> cogerTodo();
-    T coger(String busqueda);
+    List<T> coger(String busqueda);
 
     // UPDATE
-    void modificar(T dato);
+    boolean modificar(T dato);
 
     // DELETE
     T eliminar(T dato);
     boolean eliminarTodo();
+    boolean deshacer();
 }

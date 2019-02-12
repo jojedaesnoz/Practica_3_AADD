@@ -10,7 +10,7 @@ public class BarraBusqueda extends JPanel implements DocumentListener {
     private GridBagConstraints gbc;
     private JTextField tfBusqueda;
     private JLabel lbBusqueda;
-    private ControlBusqueda controlBusqueda;
+    private ListenerBusqueda listenerBusqueda;
 
     public BarraBusqueda() {
         super();
@@ -37,7 +37,7 @@ public class BarraBusqueda extends JPanel implements DocumentListener {
     }
 
     // Interfaz para avisar de cuando se ha modificado la caja de busqueda
-    public interface ControlBusqueda {
+    public interface ListenerBusqueda {
         void buscar(String cadena);
     }
 
@@ -47,12 +47,12 @@ public class BarraBusqueda extends JPanel implements DocumentListener {
 
     @Override
     public void insertUpdate(DocumentEvent e) {
-        controlBusqueda.buscar(tfBusqueda.getText());
+        listenerBusqueda.buscar(tfBusqueda.getText());
     }
 
     @Override
     public void removeUpdate(DocumentEvent e) {
-        controlBusqueda.buscar(tfBusqueda.getText());
+        listenerBusqueda.buscar(tfBusqueda.getText());
     }
 
     @Override
@@ -60,12 +60,12 @@ public class BarraBusqueda extends JPanel implements DocumentListener {
 
     }
 
-    public ControlBusqueda getControlBusqueda() {
-        return controlBusqueda;
+    public ListenerBusqueda getListenerBusqueda() {
+        return listenerBusqueda;
     }
 
-    public void setControlBusqueda(ControlBusqueda controlBusqueda) {
-        this.controlBusqueda = controlBusqueda;
+    public void setListenerBusqueda(ListenerBusqueda listenerBusqueda) {
+        this.listenerBusqueda = listenerBusqueda;
     }
 
 }
