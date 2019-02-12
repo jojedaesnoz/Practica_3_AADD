@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "movimientos_especiales")
-public class MovimientoEspecial {
+public class Movimiento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +23,10 @@ public class MovimientoEspecial {
     @PrimaryKeyJoinColumn
     private Personaje personaje;
 
-    public MovimientoEspecial() {
+    public Movimiento() {
     }
 
-    public MovimientoEspecial(long id, String nombre, int energia, Personaje personaje) {
+    public Movimiento(long id, String nombre, int energia, Personaje personaje) {
         this.id = id;
         this.nombre = nombre;
         this.energia = energia;

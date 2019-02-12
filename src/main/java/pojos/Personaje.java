@@ -25,7 +25,7 @@ public class Personaje implements Comparable {
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
-    private MovimientoEspecial movimientoEspecial;
+    private Movimiento movimiento;
 
     @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(name = "personaje_arma",
@@ -36,12 +36,12 @@ public class Personaje implements Comparable {
     public Personaje() {
     }
 
-    public Personaje(long id, String nombre, int vida, double velocidad, MovimientoEspecial movimientoEspecial, List<Arma> armas) {
+    public Personaje(long id, String nombre, int vida, double velocidad, Movimiento movimiento, List<Arma> armas) {
         this.id = id;
         this.nombre = nombre;
         this.vida = vida;
         this.velocidad = velocidad;
-        this.movimientoEspecial = movimientoEspecial;
+        this.movimiento = movimiento;
         this.armas = armas;
     }
 
@@ -77,12 +77,12 @@ public class Personaje implements Comparable {
         this.velocidad = velocidad;
     }
 
-    public MovimientoEspecial getMovimientoEspecial() {
-        return movimientoEspecial;
+    public Movimiento getMovimiento() {
+        return movimiento;
     }
 
-    public void setMovimientoEspecial(MovimientoEspecial movimientoEspecial) {
-        this.movimientoEspecial = movimientoEspecial;
+    public void setMovimiento(Movimiento movimiento) {
+        this.movimiento = movimiento;
     }
 
     public List<Arma> getArmas() {

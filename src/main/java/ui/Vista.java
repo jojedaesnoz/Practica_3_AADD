@@ -1,7 +1,7 @@
 package ui;
 
 import pojos.Arma;
-import pojos.MovimientoEspecial;
+import pojos.Movimiento;
 import pojos.Personaje;
 
 import javax.swing.*;
@@ -19,15 +19,20 @@ public class Vista {
     public JTextField nombreMovimientoTextField;
     public JTextField nivelMovimientoTextField;
     public JTextField energiaMovimientoTextField;
-    public BotonesCRUD personajeMovimientoCombo;
-    public JList<Arma> armasPersonajeList;
     public JList<Arma> armasList;
-    public JList<MovimientoEspecial> movimientosList;
+    public JList<Movimiento> movimientosList;
     public JList<Personaje> personajeList;
+    public BotonesCRUD botoneraMovimientos;
+    public BotonesCRUD botoneraArmas;
+    public BotonesCRUD botoneraPersonajes;
+    public JPanel personajesPanel;
+    public JPanel armasPanel;
+    public JPanel movimientosPanel;
+    private MultiCombo personajesArmasCombo;
 
     public DefaultListModel<Arma> armasPersonajeModelo;
     public DefaultListModel<Arma> armasModelo;
-    public DefaultListModel<MovimientoEspecial> movimientosModelo;
+    public DefaultListModel<Movimiento> movimientosModelo;
     public DefaultListModel<Personaje> personajeModelo;
 
     {
@@ -39,6 +44,5 @@ public class Vista {
         personajeList.setModel(personajeModelo);
         movimientosList.setModel(movimientosModelo);
         armasList.setModel(armasModelo);
-        armasPersonajeList.setModel(armasPersonajeModelo);
     }
 }

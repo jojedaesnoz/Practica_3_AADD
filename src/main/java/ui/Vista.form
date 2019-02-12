@@ -19,7 +19,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="ac1b8" layout-manager="FormLayout">
+          <grid id="ac1b8" binding="personajesPanel" layout-manager="FormLayout">
             <rowspec value="center:max(d;4px):noGrow"/>
             <rowspec value="top:4dlu:noGrow"/>
             <rowspec value="center:d:noGrow"/>
@@ -91,7 +91,7 @@
                   <text value=""/>
                 </properties>
               </component>
-              <nested-form id="11d42" form-file="ui/BotonesCRUD.form">
+              <nested-form id="11d42" form-file="ui/BotonesCRUD.form" binding="botoneraPersonajes">
                 <constraints>
                   <grid row="8" column="0" row-span="1" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
@@ -119,7 +119,7 @@
                 <properties/>
                 <border type="none"/>
                 <children>
-                  <nested-form id="d26b" form-file="ui/MultiCombo.form">
+                  <nested-form id="d26b" form-file="ui/MultiCombo.form" binding="personajesArmasCombo">
                     <constraints/>
                   </nested-form>
                 </children>
@@ -135,11 +135,11 @@
               </component>
               <component id="5395a" class="javax.swing.JLabel">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
                   <forms defaultalign-horz="false"/>
                 </constraints>
                 <properties>
-                  <text value="Armas"/>
+                  <text value="Armas ---&gt;"/>
                 </properties>
               </component>
               <component id="586e9" class="ui.BarraBusqueda">
@@ -151,7 +151,7 @@
               </component>
             </children>
           </grid>
-          <grid id="6340d" layout-manager="FormLayout">
+          <grid id="6340d" binding="armasPanel" layout-manager="FormLayout">
             <rowspec value="center:d:noGrow"/>
             <rowspec value="top:4dlu:noGrow"/>
             <rowspec value="center:max(d;4px):noGrow"/>
@@ -244,7 +244,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <nested-form id="d7cde" form-file="ui/BotonesCRUD.form">
+              <nested-form id="d7cde" form-file="ui/BotonesCRUD.form" binding="botoneraArmas">
                 <constraints>
                   <grid row="8" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
@@ -273,7 +273,7 @@
               </component>
             </children>
           </grid>
-          <grid id="3e853" layout-manager="FormLayout">
+          <grid id="3e853" binding="movimientosPanel" layout-manager="FormLayout">
             <rowspec value="center:d:noGrow"/>
             <rowspec value="top:4dlu:noGrow"/>
             <rowspec value="center:max(d;4px):noGrow"/>
@@ -366,7 +366,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <nested-form id="7e516" form-file="ui/BotonesCRUD.form" binding="personajeMovimientoCombo">
+              <nested-form id="7e516" form-file="ui/BotonesCRUD.form" binding="botoneraMovimientos">
                 <constraints>
                   <grid row="8" column="0" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                   <forms/>
