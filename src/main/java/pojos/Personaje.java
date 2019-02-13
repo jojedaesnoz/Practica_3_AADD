@@ -20,9 +20,6 @@ public class Personaje implements Comparable {
     @Column(name = "vida")
     private int vida;
 
-    @Column(name = "velocidad")
-    private double velocidad;
-
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Movimiento movimiento;
@@ -36,11 +33,10 @@ public class Personaje implements Comparable {
     public Personaje() {
     }
 
-    public Personaje(long id, String nombre, int vida, double velocidad, Movimiento movimiento, List<Arma> armas) {
+    public Personaje(long id, String nombre, int vida, Movimiento movimiento, List<Arma> armas) {
         this.id = id;
         this.nombre = nombre;
         this.vida = vida;
-        this.velocidad = velocidad;
         this.movimiento = movimiento;
         this.armas = armas;
     }
@@ -67,14 +63,6 @@ public class Personaje implements Comparable {
 
     public void setVida(int vida) {
         this.vida = vida;
-    }
-
-    public double getVelocidad() {
-        return velocidad;
-    }
-
-    public void setVelocidad(double velocidad) {
-        this.velocidad = velocidad;
     }
 
     public Movimiento getMovimiento() {

@@ -58,8 +58,8 @@
           <forms defaultalign-horz="false"/>
         </constraints>
         <properties>
-          <labelFor value="fd94c"/>
-          <text value="Velocidad"/>
+          <labelFor value="bdebc"/>
+          <text value="Movimiento"/>
         </properties>
       </component>
       <component id="c8d3e" class="javax.swing.JTextField" binding="nombreTextField" default-binding="true">
@@ -80,7 +80,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="fd94c" class="javax.swing.JTextField" binding="velocidadTextField" default-binding="true">
+      <component id="bdebc" class="javax.swing.JComboBox" binding="movimientoComboBox" default-binding="true">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>

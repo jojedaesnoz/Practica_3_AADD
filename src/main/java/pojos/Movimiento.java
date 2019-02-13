@@ -64,4 +64,12 @@ public class Movimiento {
     public void setPersonaje(Personaje personaje) {
         this.personaje = personaje;
     }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(int nivel) {
+        this.nivel = nivel;
+    }
 }

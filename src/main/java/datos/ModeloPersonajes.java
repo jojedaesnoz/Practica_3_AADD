@@ -1,42 +1,75 @@
 package datos;
 
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 import pojos.Personaje;
+import util.HibernateUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModeloPersonajes implements ModeloCRUD<Personaje> {
+    public Personaje ultimoBorrado;
+
     @Override
-    public boolean guardar(Personaje dato) {
-        return false;
+    public void guardar(Personaje dato) {
+        Session session = HibernateUtil.getCurrentSession();
+        session.beginTransaction();
+        session.saveOrUpdate(dato);
+        session.getTransaction().commit();
+        session.close();
     }
 
     @Override
     public List<Personaje> cogerTodo() {
-        return null;
+        Session session = HibernateUtil.getCurrentSession();
+        Query query = session.createQuery("FROM Personaje");
+        ArrayList<Personaje> personajes = (ArrayList<Personaje>) query.list() ;
+        session.close();
+        return personajes;
     }
 
     @Override
     public List<Personaje> coger(String busqueda) {
-        return null;
+        Session session = HibernateUtil.getCurrentSession();
+        Query query = session.createQuery("FROM Personaje p WHERE p.nombre LIKE '%:busqueda%'");
+        query.setParameter("busqueda", busqueda);
+        ArrayList<Personaje> personajes = (ArrayList<Personaje>) query.list();
+        session.close();
+        return personajes;
     }
 
     @Override
-    public boolean modificar(Personaje dato) {
-        return false;
+    public void modificar(Personaje dato) {
+        guardar(dato);
     }
 
     @Override
     public Personaje eliminar(Personaje dato) {
-        return null;
+        Session session = HibernateUtil.getCurrentSession();
+        session.beginTransaction();
+        session.delete(dato);
+        session.getTransaction().commit();
+        session.close();
+        ultimoBorrado = dato;
+        return dato;
     }
 
     @Override
-    public boolean eliminarTodo() {
-        return false;
+    public void eliminarTodo() {
+        Session session = HibernateUtil.getCurrentSession();
+        session.beginTransaction();
+        session.createQuery("DELETE FROM Personaje").executeUpdate();
+        session.getTransaction().commit();
+        session.close();
     }
 
     @Override
-    public boolean deshacer() {
-        return false;
+    public void deshacer() {
+        Session session = HibernateUtil.getCurrentSession();
+        session.beginTransaction();
+        session.saveOrUpdate(ultimoBorrado);
+        session.getTransaction().commit();
+        session.close();
     }
 }

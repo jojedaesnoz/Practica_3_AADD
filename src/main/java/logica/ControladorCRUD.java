@@ -2,19 +2,19 @@ package logica;
 
 
 import datos.ModeloCRUD;
+import ui.BarraBusqueda;
 import ui.BotonesCRUD;
-import ui.VistaCRUD;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 import static logica.ControladorCRUD.Origen.*;
+import static ui.BotonesCRUD.Accion;
 
 public abstract class ControladorCRUD<T> implements ActionListener, MouseListener, ui.BarraBusqueda.ListenerBusqueda {
 
@@ -23,17 +23,19 @@ public abstract class ControladorCRUD<T> implements ActionListener, MouseListene
     }
 
     Origen origen;
-    private ui.BotonesCRUD botonesCRUD;
-    private JList<T> jList;
-    private DefaultListModel<T> modeloLista;
-    private ui.BarraBusqueda barraBusqueda;
-    private ModeloCRUD<T> modeloCRUD;
-    private T pojo;
+    BotonesCRUD.Accion accion;
+    public ui.BotonesCRUD botonesCRUD;
+    public JList<T> jList;
+    public DefaultListModel<T> modeloLista;
+    public ui.BarraBusqueda barraBusqueda;
+    public ModeloCRUD<T> modeloCRUD;
+    public ArrayList<T> listaDatos;
+    public T dato;
 
-    public ControladorCRUD(ModeloCRUD modeloCRUD, VistaCRUD vistaCRUD) {
+    public ControladorCRUD(ModeloCRUD modeloCRUD) {
         this.modeloCRUD = modeloCRUD;
-        this.botonesCRUD = vistaCRUD.getBotonesCRUD();
-        this.jList = vistaCRUD.getLista();
+        this.botonesCRUD = getBotonesCRUD();
+        this.jList = getLista();
 
         // Inicializar el modelo de la lista
         if (jList.getModel() != null) {
@@ -42,22 +44,17 @@ public abstract class ControladorCRUD<T> implements ActionListener, MouseListene
             modeloLista = new DefaultListModel<>();
             jList.setModel(modeloLista);
         }
-        this.barraBusqueda = vistaCRUD.getBarraBusqueda();
+        this.barraBusqueda =getBarraBusqueda();
 
+        listaDatos = new ArrayList<>();
         ponerListeners();
     }
 
-    /*
-    TODO: posibilidad
-    que la vista sea la que tiene los metodos de construir pojos y pintarlos etc.
-     */
-
-    private void ponerListeners() {
+    public void ponerListeners() {
         botonesCRUD.botones.forEach(boton -> boton.addActionListener(this));
         jList.addMouseListener(this);
         barraBusqueda.setListenerBusqueda(this);
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -65,46 +62,62 @@ public abstract class ControladorCRUD<T> implements ActionListener, MouseListene
             case NUEVO:
                 setModoEdicion(true);
                 limpiarPantalla();
-                origen = NUEVO;
+                origen = Origen.NUEVO;
+                accion = Accion.NUEVO;
                 break;
             case GUARDAR:
                 setModoEdicion(false);
-                extraerPojo();
+                extraerDatos();
                 if (origen.equals(MODIFICAR)) {
-                    modeloCRUD.modificar(pojo);
+                    modeloCRUD.modificar(dato);
                 } else {
-                    modeloCRUD.guardar(pojo);
+                    modeloCRUD.guardar(dato);
                 }
+                accion = Accion.GUARDAR;
                 break;
             case MODIFICAR:
                 setModoEdicion(true);
                 origen = MODIFICAR;
+                accion = Accion.MODIFICAR;
                 break;
             case CANCELAR:
                 setModoEdicion(false);
                 itemSeleccionado(false);
+                accion = Accion.CANCELAR;
                 break;
             case ELIMINAR:
                 setModoEdicion(false);
                 botonesCRUD.deshacerButton.setEnabled(true);
-                modeloCRUD.eliminar(pojo);
+                modeloCRUD.eliminar(dato);
+                accion = Accion.ELIMINAR;
                 break;
             case DESHACER:
                 setModoEdicion(false);
                 botonesCRUD.deshacerButton.setEnabled(false);
                 modeloCRUD.deshacer();
+                accion = Accion.DESHACER;
                 break;
             case ELIMINAR_TODO:
                 setModoEdicion(false);
                 modeloCRUD.eliminarTodo();
+                accion = Accion.ELIMINAR_TODO;
                 break;
         }
+
+        listaDatos = (ArrayList<T>) modeloCRUD.cogerTodo();
+        barraBusqueda.getTfBusqueda().setText("");
     }
 
-    private void refrescarLista(List<T> lista) {
+    public void refrescarLista(List<T> lista) {
         modeloLista.clear();
         lista.forEach(modeloLista::addElement);
+        listaDatos.clear();
+        listaDatos.addAll(lista);
+        datosCambiados(listaDatos);
     }
+
+    protected abstract void datosCambiados(ArrayList<T> listaDatos);
+
 
     @Override
     public void buscar(String cadena) {
@@ -129,7 +142,7 @@ public abstract class ControladorCRUD<T> implements ActionListener, MouseListene
             botonesCRUD.modificarButton.setEnabled(true);
             botonesCRUD.cancelarButton.setEnabled(true);
             botonesCRUD.eliminarTodoButton.setEnabled(true);
-            pojo = jList.getSelectedValue();
+            cargarDatos(dato = jList.getSelectedValue());
         }
     }
 
@@ -143,13 +156,16 @@ public abstract class ControladorCRUD<T> implements ActionListener, MouseListene
      * Metodo para formar un objeto a partir de los datos introducidos por pantalla
      * @return
      */
-    abstract T extraerPojo();
+    abstract T extraerDatos();
 
     /**
      * Metodo para cargar en pantalla los datos del objeto seleccionado
      * @param pojo
      */
-    abstract void ponerEnPantalla(T pojo);
+    abstract void cargarDatos(T pojo);
+    abstract BotonesCRUD getBotonesCRUD();
+    abstract BarraBusqueda getBarraBusqueda();
+    abstract JList<T> getLista();
 
 
     // LISTENERS VACIOS

@@ -1,31 +1,20 @@
 package ui;
 
+import pojos.Arma;
+import pojos.Movimiento;
 import pojos.Personaje;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
-public class PersonajesUI implements VistaCRUD<Personaje> {
+public class PersonajesUI {
     public JPanel panelPersonajes;
     public JTextField nombreTextField;
     public JTextField vidaTextField;
-    public JTextField velocidadTextField;
+    public JComboBox<Movimiento> movimientoComboBox;
     public JList<Personaje> listaPersonajes;
-    public MultiCombo armasMultiCombo;
+    public MultiCombo<Arma> armasMultiCombo;
     public BarraBusqueda barraBusqueda;
     public BotonesCRUD botones;
 
-    @Override
-    public BotonesCRUD getBotonesCRUD() {
-        return botones;
-    }
-
-    @Override
-    public BarraBusqueda getBarraBusqueda() {
-        return barraBusqueda;
-    }
-
-    @Override
-    public JList<Personaje> getLista() {
-        return listaPersonajes;
-    }
 }

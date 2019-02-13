@@ -1,42 +1,76 @@
 package datos;
 
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 import pojos.Arma;
+import pojos.Movimiento;
+import util.HibernateUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModeloArmas implements ModeloCRUD<Arma> {
+    private Arma ultimoBorrado;
+
     @Override
-    public boolean guardar(Arma dato) {
-        return false;
+    public void guardar(Arma dato) {
+        Session session = HibernateUtil.getCurrentSession();
+        session.beginTransaction();
+        session.saveOrUpdate(dato);
+        session.getTransaction().commit();
+        session.close();
     }
 
     @Override
     public List<Arma> cogerTodo() {
-        return null;
+        Session session = HibernateUtil.getCurrentSession();
+        Query query = session.createQuery("FROM Arma");
+        ArrayList<Arma> armas = (ArrayList<Arma>) query.list() ;
+        session.close();
+        return armas;
     }
 
     @Override
     public List<Arma> coger(String busqueda) {
-        return null;
+        Session session = HibernateUtil.getCurrentSession();
+        Query query = session.createQuery("FROM Arma a WHERE a.nombre LIKE '%:busqueda%'");
+        query.setParameter("busqueda", busqueda);
+        ArrayList<Arma> armas = (ArrayList<Arma>) query.list();
+        session.close();
+        return armas;
     }
 
     @Override
-    public boolean modificar(Arma dato) {
-        return false;
+    public void modificar(Arma dato) {
+        guardar(dato);
     }
 
     @Override
     public Arma eliminar(Arma dato) {
-        return null;
+        Session session = HibernateUtil.getCurrentSession();
+        session.beginTransaction();
+        session.delete(dato);
+        session.getTransaction().commit();
+        session.close();
+        ultimoBorrado = dato;
+        return dato;
     }
 
     @Override
-    public boolean eliminarTodo() {
-        return false;
+    public void eliminarTodo() {
+        Session session = HibernateUtil.getCurrentSession();
+        session.beginTransaction();
+        session.createQuery("DELETE FROM Arma").executeUpdate();
+        session.getTransaction().commit();
+        session.close();
     }
 
     @Override
-    public boolean deshacer() {
-        return false;
+    public void deshacer() {
+        Session session = HibernateUtil.getCurrentSession();
+        session.beginTransaction();
+        session.saveOrUpdate(ultimoBorrado);
+        session.getTransaction().commit();
+        session.close();
     }
 }

@@ -32,4 +32,9 @@ public class MultiCombo<T> implements ActionListener {
     public List<T> getItems() {
         return new ArrayList<>(Arrays.asList((T[]) modelo.toArray()));
     }
+
+    public void setItems(List<T> items) {
+        modelo.clear();
+        items.forEach(modelo::addElement);
+    }
 }

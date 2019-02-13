@@ -57,4 +57,20 @@ public class Arma {
     public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
+
+    public int getRareza() {
+        return rareza;
+    }
+
+    public void setRareza(int rareza) {
+        this.rareza = rareza;
+    }
+
+    public int getDurabilidad() {
+        return durabilidad;
+    }
+
+    public void setDurabilidad(int durabilidad) {
+        this.durabilidad = durabilidad;
+    }
 }

@@ -4,7 +4,7 @@ import pojos.Arma;
 
 import javax.swing.*;
 
-public class ArmasUI implements VistaCRUD<Arma> {
+public class ArmasUI {
     public JPanel panelArmas;
     public JTextField nombreTextField;
     public JTextField ataqueTextField;
@@ -14,18 +14,5 @@ public class ArmasUI implements VistaCRUD<Arma> {
     public BotonesCRUD botones;
     public BarraBusqueda barraBusqueda;
 
-    @Override
-    public BotonesCRUD getBotonesCRUD() {
-        return botones;
-    }
 
-    @Override
-    public BarraBusqueda getBarraBusqueda() {
-        return barraBusqueda;
-    }
-
-    @Override
-    public JList<Arma> getLista() {
-        return listaArmas;
-    }
 }
