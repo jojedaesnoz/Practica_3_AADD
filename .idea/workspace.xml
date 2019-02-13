@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6eae954a-9801-4b11-b332-0f897285c3e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/datos/ModeloArmas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datos/ModeloMovimientos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datos/ModeloPersonajes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/ArmasUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/ArmasUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/MovimientosUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/MovimientosUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PersonajesUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PersonajesUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Activad_3_AADD.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datos/Modelo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/locura/Controlador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/locura/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datos/ModeloCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/locura/Pojo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/locura/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/VistaCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/ArmControlador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/Controlador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/MovControlador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/PersControlador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/old/BotonesCRUD2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/BotonesCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/BotonesCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MultiCombo.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MultiCombo.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Vista.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Vista.java" afterDir="false" />
-    </list>
+    <list default="true" id="6eae954a-9801-4b11-b332-0f897285c3e5" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,7 +35,8 @@
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.25" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -88,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
+            <state relative-caret-position="566">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -426,9 +396,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20309168" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20522387" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -442,7 +411,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -527,14 +496,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Logica.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
+        <state relative-caret-position="566">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#mousePressed#0;class#Controlador#0" />
-            <element signature="method#mouseReleased#0;class#Controlador#0" />
-            <element signature="method#mouseEntered#0;class#Controlador#0" />
-            <element signature="method#mouseExited#0;class#Controlador#0" />
           </folding>
         </state>
       </provider>
