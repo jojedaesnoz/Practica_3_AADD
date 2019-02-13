@@ -1,92 +1,114 @@
 package logica;
 
-import ui.BarraBusqueda;
+
+import datos.ModeloCRUD;
 import ui.BotonesCRUD;
-import ui.Vista;
+import ui.VistaCRUD;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
-import static ui.BotonesCRUD.Accion;
+import static logica.ControladorCRUD.Origen.*;
 
-public abstract class ControladorCRUD<T> implements ActionListener, MouseListener {
+public abstract class ControladorCRUD<T> implements ActionListener, MouseListener, ui.BarraBusqueda.ListenerBusqueda {
 
-    private final BotonesCRUD botonesCRUD;
-    private final JList<T> lista;
-    private Controlador controlador;
-    private BarraBusqueda busqueda;
-    private Function<Vista, T> extractorPojo;
+    public enum Origen {
+        NUEVO, MODIFICAR
+    }
 
-    // TODO: metodo cargar pojo (consumer)
+    Origen origen;
+    private ui.BotonesCRUD botonesCRUD;
+    private JList<T> jList;
+    private DefaultListModel<T> modeloLista;
+    private ui.BarraBusqueda barraBusqueda;
+    private ModeloCRUD<T> modeloCRUD;
+    private T pojo;
 
-    public ControladorCRUD(BotonesCRUD botonesCRUD, JList<T> lista) {
-        this.botonesCRUD = botonesCRUD;
-        this.lista = lista;
+    public ControladorCRUD(ModeloCRUD modeloCRUD, VistaCRUD vistaCRUD) {
+        this.modeloCRUD = modeloCRUD;
+        this.botonesCRUD = vistaCRUD.getBotonesCRUD();
+        this.jList = vistaCRUD.getLista();
 
+        // Inicializar el modelo de la lista
+        if (jList.getModel() != null) {
+            modeloLista = (DefaultListModel<T>) jList.getModel();
+        } else {
+            modeloLista = new DefaultListModel<>();
+            jList.setModel(modeloLista);
+        }
+        this.barraBusqueda = vistaCRUD.getBarraBusqueda();
+
+        ponerListeners();
+    }
+
+    /*
+    TODO: posibilidad
+    que la vista sea la que tiene los metodos de construir pojos y pintarlos etc.
+     */
+
+    private void ponerListeners() {
         botonesCRUD.botones.forEach(boton -> boton.addActionListener(this));
-        lista.addMouseListener(this);
+        jList.addMouseListener(this);
+        barraBusqueda.setListenerBusqueda(this);
     }
 
-    public Function<Vista, T> getExtractorPojo() {
-        return extractorPojo;
-    }
-
-    public void setExtractorPojo(Function<Vista, T> extractorPojo) {
-        this.extractorPojo = extractorPojo;
-    }
-
-    public T extraerPojo(Vista entrada) {
-        return extractorPojo.apply(entrada);
-    }
-
-    public ControladorCRUD(BotonesCRUD botonesCRUD, JList<T> lista, Controlador controlador) {
-        this.botonesCRUD = botonesCRUD;
-        this.lista = lista;
-        this.controlador = controlador;
-
-        botonesCRUD.botones.forEach(boton -> boton.addActionListener(this));
-        lista.addMouseListener(this);
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        switch (Accion.valueOf(e.getActionCommand())) {
+        switch (BotonesCRUD.Accion.valueOf(e.getActionCommand())) {
             case NUEVO:
                 setModoEdicion(true);
-                clickEnNuevo(e);
+                limpiarPantalla();
+                origen = NUEVO;
                 break;
             case GUARDAR:
                 setModoEdicion(false);
-                clickEnGuardar(e);
+                extraerPojo();
+                if (origen.equals(MODIFICAR)) {
+                    modeloCRUD.modificar(pojo);
+                } else {
+                    modeloCRUD.guardar(pojo);
+                }
                 break;
             case MODIFICAR:
                 setModoEdicion(true);
-                clickEnModificar(e);
+                origen = MODIFICAR;
                 break;
             case CANCELAR:
                 setModoEdicion(false);
                 itemSeleccionado(false);
-                clickEnCancelar(e);
                 break;
             case ELIMINAR:
                 setModoEdicion(false);
                 botonesCRUD.deshacerButton.setEnabled(true);
-                clickEnEliminar(e);
+                modeloCRUD.eliminar(pojo);
                 break;
             case DESHACER:
                 setModoEdicion(false);
                 botonesCRUD.deshacerButton.setEnabled(false);
-                clickEnDeshacer(e);
+                modeloCRUD.deshacer();
                 break;
             case ELIMINAR_TODO:
                 setModoEdicion(false);
-                clickEnEliminarTodo(e);
+                modeloCRUD.eliminarTodo();
                 break;
         }
+    }
+
+    private void refrescarLista(List<T> lista) {
+        modeloLista.clear();
+        lista.forEach(modeloLista::addElement);
+    }
+
+    @Override
+    public void buscar(String cadena) {
+        refrescarLista(modeloCRUD.coger(cadena));
     }
 
     public void setModoEdicion(boolean modo) {
@@ -102,38 +124,47 @@ public abstract class ControladorCRUD<T> implements ActionListener, MouseListene
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        botonesCRUD.modificarButton.setEnabled(true);
-        botonesCRUD.cancelarButton.setEnabled(true);
-        botonesCRUD.eliminarTodoButton.setEnabled(true);
-        clickEnLista(e, lista);
+        // Click en la lista
+        if (e.getComponent().equals(jList)) {
+            botonesCRUD.modificarButton.setEnabled(true);
+            botonesCRUD.cancelarButton.setEnabled(true);
+            botonesCRUD.eliminarTodoButton.setEnabled(true);
+            pojo = jList.getSelectedValue();
+        }
     }
 
     // METODOS ABSTRACTOS
-    abstract void clickEnLista(MouseEvent e, JList<T> lista);
-    abstract void clickEnNuevo(ActionEvent evento);
-    abstract void clickEnGuardar(ActionEvent evento);
-    abstract void clickEnModificar(ActionEvent evento);
-    abstract void clickEnCancelar(ActionEvent evento);
-    abstract void clickEnEliminar(ActionEvent evento);
-    abstract void clickEnDeshacer(ActionEvent evento);
-    abstract void clickEnEliminarTodo(ActionEvent evento);
+    /**
+     * Metodo para limpiar la pantalla (vaciar cajas de texto etc)
+     */
+    abstract void limpiarPantalla();
+
+    /**
+     * Metodo para formar un objeto a partir de los datos introducidos por pantalla
+     * @return
+     */
+    abstract T extraerPojo();
+
+    /**
+     * Metodo para cargar en pantalla los datos del objeto seleccionado
+     * @param pojo
+     */
+    abstract void ponerEnPantalla(T pojo);
+
 
     // LISTENERS VACIOS
     @Override
     public void mousePressed(MouseEvent e) {
 
     }
-
     @Override
     public void mouseReleased(MouseEvent e) {
 
     }
-
     @Override
     public void mouseEntered(MouseEvent e) {
 
     }
-
     @Override
     public void mouseExited(MouseEvent e) {
 

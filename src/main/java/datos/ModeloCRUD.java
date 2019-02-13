@@ -1,8 +1,8 @@
-package locura;
+package datos;
 
 import java.util.List;
 
-public interface Modelo<T> {
+public interface ModeloCRUD<T> {
 
     // CREATE
     boolean guardar(T dato);

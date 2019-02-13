@@ -1,48 +1,42 @@
 package ui;
 
-import pojos.Arma;
-import pojos.Movimiento;
-import pojos.Personaje;
-
 import javax.swing.*;
+import java.awt.*;
 
 public class Vista {
-    public JPanel panelPrincipal;
-    public JTabbedPane tabbedPane;
-    public JTextField nombrePersonajeTextField;
-    public JTextField vidaPersonajeTextField;
-    public JTextField velocidadPersonajeTextField;
-    public JTextField nombreArmaTextField;
-    public JTextField ataqueArmaTextField;
-    public JTextField rarezaArmasTextField;
-    public JTextField durabilidadArmasTextField;
-    public JTextField nombreMovimientoTextField;
-    public JTextField nivelMovimientoTextField;
-    public JTextField energiaMovimientoTextField;
-    public JList<Arma> armasList;
-    public JList<Movimiento> movimientosList;
-    public JList<Personaje> personajeList;
-    public BotonesCRUD botoneraMovimientos;
-    public BotonesCRUD botoneraArmas;
-    public BotonesCRUD botoneraPersonajes;
-    public JPanel personajesPanel;
-    public JPanel armasPanel;
-    public JPanel movimientosPanel;
-    private MultiCombo personajesArmasCombo;
 
-    public DefaultListModel<Arma> armasPersonajeModelo;
-    public DefaultListModel<Arma> armasModelo;
-    public DefaultListModel<Movimiento> movimientosModelo;
-    public DefaultListModel<Personaje> personajeModelo;
+    public JFrame ventana;
+    public PersonajesUI personajesUI;
+    public MovimientosUI movimientosUI;
+    public ArmasUI armasUI;
 
-    {
-        personajeModelo = new DefaultListModel<>();
-        movimientosModelo = new DefaultListModel<>();
-        armasPersonajeModelo = new DefaultListModel<>();
-        armasModelo = new DefaultListModel<>();
+    public Vista() {
+        inicializar();
+        addTabs();
+        mostrarVentana();
+    }
 
-        personajeList.setModel(personajeModelo);
-        movimientosList.setModel(movimientosModelo);
-        armasList.setModel(armasModelo);
+    private void mostrarVentana() {
+        ventana.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        ventana.pack();
+        ventana.setVisible(true);
+    }
+
+    private void inicializar() {
+        ventana = new JFrame("Creador de personajes");
+        ventana.setLayout(new BorderLayout());
+
+        personajesUI = new PersonajesUI();
+        armasUI = new ArmasUI();
+        movimientosUI = new MovimientosUI();
+
+    }
+
+    private void addTabs() {
+        JTabbedPane tabbedPane = new JTabbedPane();
+        tabbedPane.addTab("Personajes", personajesUI.panelPersonajes);
+        tabbedPane.addTab("Armas", armasUI.panelArmas);
+        tabbedPane.addTab("Movimientos Especiales", movimientosUI.panelMovimientos);
+        ventana.add(tabbedPane, BorderLayout.CENTER);
     }
 }

@@ -1,11 +1,11 @@
-package locura;
+package ui;
 
 import ui.BarraBusqueda;
 import ui.BotonesCRUD;
 
 import javax.swing.*;
 
-public interface Vista<T> {
+public interface VistaCRUD<T> {
 
     BotonesCRUD getBotonesCRUD();
     BarraBusqueda getBarraBusqueda();

@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d195aed9-8f1f-4d5f-b6ec-29b1e8593edf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/locura/Controlador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/locura/Pojo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/locura/Vista.java" afterDir="false" />
+    <list default="true" id="6eae954a-9801-4b11-b332-0f897285c3e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/datos/ModeloArmas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/datos/ModeloMovimientos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/datos/ModeloPersonajes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/ArmasUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/ArmasUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/MovimientosUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/MovimientosUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PersonajesUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ui/PersonajesUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/locura/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/locura/Modelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Activad_3_AADD.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datos/Modelo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/locura/Controlador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/locura/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datos/ModeloCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/locura/Pojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/locura/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/VistaCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/ArmControlador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/Controlador.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/BarraBusqueda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/BarraBusqueda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/MovControlador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/PersControlador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/old/BotonesCRUD2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/BotonesCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/BotonesCRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/MultiCombo.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/MultiCombo.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Vista.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Vista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Vista.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,93 +42,148 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="1300233833">
+    <session id="-957650322">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.2" value="3" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="9559" />
-          <entry key="PLAIN_TEXT" value="43" />
-          <entry key="XML" value="8" />
+          <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
-          <entry key="GUI_DESIGNER_FORM" value="13" />
-          <entry key="Image" value="1" />
-          <entry key="JAVA" value="86" />
-          <entry key="XML" value="2" />
+          <entry key="JAVA" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="433" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="115085606">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.25" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="GUI_DESIGNER_FORM" value="8" />
+          <entry key="JAVA" value="21" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="1838" />
+          <entry key="PLAIN_TEXT" value="23" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ui/BarraBusqueda.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/locura/Controlador.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="112" column="9" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
+            <state relative-caret-position="617">
+              <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3186#3187#0" expanded="true" />
-                <element signature="e#3224#3225#0" expanded="true" />
-                <element signature="e#3244#3245#0" expanded="true" />
-                <element signature="e#3280#3281#0" expanded="true" />
-                <element signature="e#2678#2679#0" expanded="true" />
-                <element signature="e#2729#2730#0" expanded="true" />
-                <element signature="method#mousePressed#0;class#PROOControladorCRUD#0" />
-                <element signature="method#mouseReleased#0;class#PROOControladorCRUD#0" />
-                <element signature="method#mouseEntered#0;class#PROOControladorCRUD#0" />
-                <element signature="method#mouseExited#0;class#PROOControladorCRUD#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/locura/Pojo.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/datos/ModeloArmas.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/datos/ModeloPersonajes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#187#188#0" expanded="true" />
+                <element signature="e#215#216#0" expanded="true" />
+                <element signature="e#271#272#0" expanded="true" />
+                <element signature="e#298#299#0" expanded="true" />
+                <element signature="e#365#366#0" expanded="true" />
+                <element signature="e#392#393#0" expanded="true" />
+                <element signature="e#454#455#0" expanded="true" />
+                <element signature="e#482#483#0" expanded="true" />
+                <element signature="e#545#546#0" expanded="true" />
+                <element signature="e#572#573#0" expanded="true" />
+                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#651#652#0" expanded="true" />
+                <element signature="e#698#699#0" expanded="true" />
+                <element signature="e#726#727#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/datos/ModeloMovimientos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#191#192#0" expanded="true" />
+                <element signature="e#219#220#0" expanded="true" />
+                <element signature="e#276#277#0" expanded="true" />
+                <element signature="e#303#304#0" expanded="true" />
+                <element signature="e#371#372#0" expanded="true" />
+                <element signature="e#398#399#0" expanded="true" />
+                <element signature="e#461#462#0" expanded="true" />
+                <element signature="e#489#490#0" expanded="true" />
+                <element signature="e#554#555#0" expanded="true" />
+                <element signature="e#581#582#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
+                <element signature="e#735#736#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/locura/Vista.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ui/PersonajesUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ui/Vista.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="357">
+              <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,22 +192,30 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/locura/Modelo.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ui/MultiCombo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
+            <state relative-caret-position="68">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ui/Vista.form">
-          <provider selected="true" editor-type-id="ui-designer" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/ui/VistaCRUD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ui/MultiCombo.form">
-          <provider selected="true" editor-type-id="ui-designer" />
+        <entry file="file://$PROJECT_DIR$/src/main/java/datos/ModeloCRUD.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -137,33 +223,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>compareTo</find>
-      <find>T</find>
-      <find>Arma</find>
       <find>private</find>
-      <find>Movimientos</find>
-      <find>Movimiento</find>
-      <find>Personaje</find>
-      <find>;</find>
-      <find>void</find>
     </findStrings>
     <replaceStrings>
-      <replace>Personaje</replace>
-      <replace>Movimientos</replace>
       <replace>public</replace>
-      <replace>MovimientoEspecial</replace>
-      <replace>Mov</replace>
-      <replace>Movimiento</replace>
-      <replace>Arma</replace>
-      <replace>{}</replace>
-      <replace>public void</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -172,160 +241,103 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/ui/ui/custom/PanelContenido.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/ui/custom/ControlBusqueda.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/ui/custom/BarraBusqueda.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/ui/custom/MultiCombo.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/ui/custom/Vista.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/ui/custom/Vista.form" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/BotoneraCRUD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/BotonesCRUD.form" />
-        <option value="$PROJECT_DIR$/src/main/java/pojos/Arma.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pojos/MovimientoEspecial.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pojos/Personaje.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/MultiCombo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/MultiCombo.form" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/CrudListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ListaListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/BotonesCRUD2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/BotonesCRUD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ListenerCRUD2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ad.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ListenerCRUDInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ListenerArmas.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ListenerPersonajes.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ListenerMovimientos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/datos/Modelo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/Controlador.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/Vista.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/Vista.form" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ListenerCRUD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ListenerCRUDÜber.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/MicroControlador.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/PersControlador.java" />
-        <option value="$PROJECT_DIR$/src/main/java/locura/Modelo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ui/BarraBusqueda.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/PROOControladorCRUD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/locura/PROOControladorCRUD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/locura/Pojo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/armas/Arma.java" />
+        <option value="$PROJECT_DIR$/src/main/java/prueba/PruebaModelo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/prueba/PruebaControlador.java" />
+        <option value="$PROJECT_DIR$/src/main/java/prueba/PruebaVista.java" />
+        <option value="$PROJECT_DIR$/src/main/java/prueba/MainPrueba.java" />
         <option value="$PROJECT_DIR$/src/main/java/locura/Controlador.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/MultiCombo.form" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/VistaAntigua.form" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/MovimientosUI.form" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/ArmasUI.form" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/PersonajesUI.form" />
+        <option value="$PROJECT_DIR$/src/main/java/locura/Vista.java" />
+        <option value="$PROJECT_DIR$/src/main/java/locura/VistaCRUD.java" />
+        <option value="$PROJECT_DIR$/src/main/java/locura/Modelo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/locura/ModeloCRUD.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/Vista.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/ArmasUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/MovimientosUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ui/PersonajesUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/datos/ModeloArmas.java" />
+        <option value="$PROJECT_DIR$/src/main/java/datos/ModeloPersonajes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/datos/ModeloMovimientos.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="642" />
-    <option name="y" value="58" />
-    <option name="width" value="854" />
-    <option name="height" value="1017" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
+              <item name="Tarea_3_AADD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tarea_3_AADD" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
+              <item name="Tarea_3_AADD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tarea_3_AADD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
+              <item name="Tarea_3_AADD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tarea_3_AADD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
+              <item name="Tarea_3_AADD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tarea_3_AADD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
+              <item name="Tarea_3_AADD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tarea_3_AADD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="datos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="locura" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
+              <item name="Tarea_3_AADD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tarea_3_AADD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="logica" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
+              <item name="Tarea_3_AADD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tarea_3_AADD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pojos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
+              <item name="Tarea_3_AADD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tarea_3_AADD" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="BotonesCRUD" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="MultiCombo" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="Vista" type="e9f4de52:FormNode" />
-            </path>
-            <path>
-              <item name="Activad_3_AADD" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Activad_3_AADD" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -335,25 +347,19 @@
   </component>
   <component name="PropertiesComponent">
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="true" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="295" />
-    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550000742905" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="376" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="338" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550052665453" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.externalResources" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\AlumnoT\IdeaProjects\Activad_3_AADD\src\main\java\old" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="logica" />
-      <recent name="ui" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AlumnoT\IdeaProjects\Activad_3_AADD\src\main\resources" />
-      <recent name="C:\Users\AlumnoT\IdeaProjects\Activad_3_AADD\src\main\java\ui" />
+      <recent name="main.java.armas" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -369,37 +375,60 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Activad_3_AADD" />
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d195aed9-8f1f-4d5f-b6ec-29b1e8593edf" name="Default Changelist" comment="" />
-      <created>1549479390904</created>
+      <changelist id="6eae954a-9801-4b11-b332-0f897285c3e5" name="Default Changelist" comment="" />
+      <created>1550051297918</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1549479390904</updated>
+      <updated>1550051297918</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23288509" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20309168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -407,17 +436,16 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32918552" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32922733" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32922733" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32827735" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -435,146 +463,158 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar!/javax/persistence/JoinTable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ui/custom/PanelValoracion.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ui/VistaPeliculas.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ui/Vista2.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ui/custom/PanelEntrada.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ui/custom/PanelContenido.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ui/SuperVista.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/search_icon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ui/custom/ControlBusqueda.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ui/VistaPeliculasPanel.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/BotonesCRUD.form">
+    <entry file="file://$PROJECT_DIR$/src/main/java/armas/Arma.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/prueba/PruebaModeloCRUD.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/prueba/PruebaVista.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/prueba/MainPrueba.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/datos/Modelo.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/VistaAntigua.form" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/VistaAntigua.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/MovimientosUI.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="1152" column="24" selection-start-line="1152" selection-start-column="15" selection-end-line="1152" selection-end-column="24" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/PersonajesUI.form">
+      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/CrudListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/BotoneraCRUD.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ListaListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ArmasUI.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/MultiCombo.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Vista.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+        <state relative-caret-position="255">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/old/BotonesCRUD2.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/ArmasUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+        <state relative-caret-position="323">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/MovimientosUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Logica.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
+        <state relative-caret-position="617">
+          <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="method#mousePressed#0;class#Controlador#0" />
+            <element signature="method#mouseReleased#0;class#Controlador#0" />
+            <element signature="method#mouseEntered#0;class#Controlador#0" />
+            <element signature="method#mouseExited#0;class#Controlador#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pojos/Personaje.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
-          <caret line="114" column="20" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2323#2324#0" expanded="true" />
-            <element signature="e#2378#2379#0" expanded="true" />
-            <element signature="e#2424#2425#0" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
-            <element signature="e#2505#2506#0" expanded="true" />
-            <element signature="e#2567#2568#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pojos/Movimiento.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/datos/ModeloArmas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pojos/Arma.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        <state relative-caret-position="102">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ad.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/datos/ModeloPersonajes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#454#455#0" expanded="true" />
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#651#652#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/datos/ModeloMovimientos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#219#220#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#303#304#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#554#555#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ListenerCRUDInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/PersonajesUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ArmControlador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/BotonesCRUD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="357">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -583,190 +623,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ui/MultiCombo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#835#836#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/MovControlador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/MultiCombo.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Vista.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/Vista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Prueba.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/MicroControlador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/function/Consumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorCRUD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1066#1067#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1092#1093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/Controlador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/PersControlador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ui/BarraBusqueda.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/locura/Pojo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ui/VistaCRUD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/datos/Modelo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/datos/ModeloCRUD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/locura/Modelo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/locura/Vista.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/locura/Controlador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="112" column="9" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3186#3187#0" expanded="true" />
-            <element signature="e#3224#3225#0" expanded="true" />
-            <element signature="e#3244#3245#0" expanded="true" />
-            <element signature="e#3280#3281#0" expanded="true" />
-            <element signature="e#2678#2679#0" expanded="true" />
-            <element signature="e#2729#2730#0" expanded="true" />
-            <element signature="method#mousePressed#0;class#PROOControladorCRUD#0" />
-            <element signature="method#mouseReleased#0;class#PROOControladorCRUD#0" />
-            <element signature="method#mouseEntered#0;class#PROOControladorCRUD#0" />
-            <element signature="method#mouseExited#0;class#PROOControladorCRUD#0" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
           <splitter-proportions>
@@ -790,19 +668,6 @@
           </splitter-proportions>
         </settings>
       </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Activad_3_AADD</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
@@ -817,7 +682,6 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
