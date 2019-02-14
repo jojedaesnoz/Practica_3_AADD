@@ -1,45 +1,12 @@
 package pojos;
 
-import javax.persistence.*;
-
-import static javax.persistence.GenerationType.IDENTITY;
-
-
-@Entity
-@Table(name = "armas")
-public class Arma {
-
-    @Id
-    @GeneratedValue(strategy = IDENTITY)
-    private long id;
-
-    @Column(name = "nombre")
+public class Arma extends Pojo{
     private String nombre;
-
-    @Column(name = "ataque")
     private int ataque;
-
-    @Column(name = "rareza")
     private int rareza;
-
-    @Column(name = "durabilidad")
     private int durabilidad;
 
     public Arma() {
-    }
-
-    public Arma(long id, String nombre, int ataque) {
-        this.id = id;
-        this.nombre = nombre;
-        this.ataque = ataque;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -72,5 +39,10 @@ public class Arma {
 
     public void setDurabilidad(int durabilidad) {
         this.durabilidad = durabilidad;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
     }
 }

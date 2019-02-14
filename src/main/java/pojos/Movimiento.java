@@ -1,44 +1,12 @@
 package pojos;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "movimientos_especiales")
-public class Movimiento {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
-    @Column(name = "nombre")
+public class Movimiento extends Pojo {
     private String nombre;
-
-    @Column(name = "energia")
     private int energia;
-
-    @Column(name = "nivel")
     private int nivel;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
     private Personaje personaje;
 
     public Movimiento() {
-    }
-
-    public Movimiento(long id, String nombre, int energia, Personaje personaje) {
-        this.id = id;
-        this.nombre = nombre;
-        this.energia = energia;
-        this.personaje = personaje;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -71,5 +39,10 @@ public class Movimiento {
 
     public void setNivel(int nivel) {
         this.nivel = nivel;
+    }
+
+    @Override
+    public String toString() {
+        return nombre;
     }
 }

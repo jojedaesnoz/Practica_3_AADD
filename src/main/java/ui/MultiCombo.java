@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 public class MultiCombo<T> implements ActionListener {
@@ -17,6 +16,7 @@ public class MultiCombo<T> implements ActionListener {
     
     {
         modelo = new DefaultListModel<>();
+        jList.setModel(modelo);
         button.addActionListener(this);
     }
 
@@ -29,11 +29,24 @@ public class MultiCombo<T> implements ActionListener {
         }
     }
 
-    public List<T> getItems() {
+    public List<T> getComboOptions() {
+        ArrayList<T> lista = new ArrayList<>();
+        for (int i = 0; i < comboBox.getItemCount(); i++) {
+            lista.add(comboBox.getItemAt(i));
+        }
+        return lista;
+    }
+
+    public void setComboOptions(List<T> items) {
+        comboBox.removeAllItems();
+        items.forEach(comboBox::addItem);
+    }
+
+    public List<T> getListItems() {
         return new ArrayList<>(Arrays.asList((T[]) modelo.toArray()));
     }
 
-    public void setItems(List<T> items) {
+    public void setListItems(List<T> items) {
         modelo.clear();
         items.forEach(modelo::addElement);
     }

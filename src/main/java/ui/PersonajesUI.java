@@ -5,9 +5,8 @@ import pojos.Movimiento;
 import pojos.Personaje;
 
 import javax.swing.*;
-import java.util.ArrayList;
 
-public class PersonajesUI {
+public class PersonajesUI implements VistaCRUD<Personaje> {
     public JPanel panelPersonajes;
     public JTextField nombreTextField;
     public JTextField vidaTextField;
@@ -17,4 +16,18 @@ public class PersonajesUI {
     public BarraBusqueda barraBusqueda;
     public BotonesCRUD botones;
 
+    @Override
+    public JList<Personaje> getLista() {
+        return listaPersonajes;
+    }
+
+    @Override
+    public BotonesCRUD getBotones() {
+        return botones;
+    }
+
+    @Override
+    public BarraBusqueda getBarraBusqueda() {
+        return barraBusqueda;
+    }
 }

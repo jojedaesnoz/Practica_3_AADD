@@ -1,75 +1,74 @@
 package logica;
 
-import datos.ModeloArmas;
 import datos.ModeloCRUD;
 import pojos.Arma;
 import ui.ArmasUI;
-import ui.BarraBusqueda;
-import ui.BotonesCRUD;
 
-import javax.swing.*;
 import java.util.ArrayList;
 
 public class ControladorArmas extends ControladorCRUD<Arma> {
 
-    public ModeloArmas modelo;
     public ArmasUI vista;
-    private final ControladorPersonajes controladorPersonajes;
+    private Controlador controlador;
 
-    public ControladorArmas(ModeloArmas modelo, ArmasUI vista, ControladorPersonajes controladorPersonajes) {
-        super(modelo);
-        this.modelo = modelo;
+    public ControladorArmas(ModeloCRUD<Arma> modelo, ArmasUI vista, Controlador controlador) {
+        super(modelo, vista);
         this.vista = vista;
-        this.controladorPersonajes = controladorPersonajes;
+        this.controlador = controlador;
     }
 
     @Override
-    public BotonesCRUD getBotonesCRUD() {
-        return vista.botones;
+    public Arma nuevoDatoVacio() {
+        return new Arma();
     }
 
     @Override
-    public BarraBusqueda getBarraBusqueda() {
-        return vista.barraBusqueda;
+    public boolean clickEnGuardar() {
+        if (origen.equals(Origen.MODIFICAR)) {
+            Arma arma = extraerDatos();
+            arma.setId(datoPantalla.getId());
+            return modeloCRUD.modificar(arma);
+        } else {
+            Arma arma = extraerDatos();
+            return modeloCRUD.guardar(arma);
+        }
     }
 
     @Override
-    public JList<Arma> getLista() {
-        return vista.listaArmas;
+    public boolean cargarDatos() {
+        vista.nombreTextField.setText(datoPantalla.getNombre());
+        vista.ataqueTextField.setText(String.valueOf(datoPantalla.getAtaque()));
+        vista.rarezaTextField.setText(String.valueOf(datoPantalla.getRareza()));
+        vista.durabilidadTextField.setText(String.valueOf(datoPantalla.getDurabilidad()));
+        return true;
+    }
+
+    @Override
+    public void datosCambiados() {
+        controlador.armasCambiadas((ArrayList<Arma>) modeloCRUD.cogerTodo());
     }
 
     @Override
     public Arma extraerDatos() {
         Arma arma = new Arma();
-        arma.setNombre(vista.nombreTextField.getText());
-        arma.setAtaque(Integer.parseInt(vista.ataqueTextField.getText()));
-        arma.setRareza(Integer.parseInt(vista.rarezaTextField.getText()));
-        arma.setDurabilidad(Integer.parseInt(vista.durabilidadTextField.getText()));
+
+        String textoNombre = vista.nombreTextField.getText();
+        String textoAtaque = vista.ataqueTextField.getText();
+        String textoRareza = vista.rarezaTextField.getText();
+        String textoDurabilidad = vista.durabilidadTextField.getText();
+
+        arma.setNombre(!textoNombre.isEmpty() ? textoNombre : "Sin nombre");
+        arma.setAtaque(!textoAtaque.isEmpty() ? Integer.parseInt(textoAtaque) : 0);
+        arma.setRareza(!textoRareza.isEmpty() ? Integer.parseInt(textoRareza) : 0);
+        arma.setDurabilidad(!textoDurabilidad.isEmpty() ? Integer.parseInt(textoDurabilidad) : 0);
         return arma;
-    }
-
-    @Override
-    public void cargarDatos(Arma dato) {
-        vista.nombreTextField.setText(dato.getNombre());
-        vista.ataqueTextField.setText(String.valueOf(dato.getAtaque()));
-        vista.rarezaTextField.setText(String.valueOf(dato.getRareza()));
-        vista.durabilidadTextField.setText(String.valueOf(dato.getDurabilidad()));
-    }
-
-    @Override
-    protected void datosCambiados(ArrayList<Arma> listaDatos) {
-        /*
-        Cuando cambia la lista de armas, hay que actualizar
-        el multiCombo en personajes
-         */
-        controladorPersonajes.cargarMultiComboArmas(listaDatos);
     }
 
     @Override
     public void limpiarPantalla() {
         vista.nombreTextField.setText("");
-        vista.ataqueTextField.setText("");
-        vista.rarezaTextField.setText("");
-        vista.durabilidadTextField.setText("");
+        vista.ataqueTextField.setText("0");
+        vista.rarezaTextField.setText("0");
+        vista.durabilidadTextField.setText("0");
     }
 }
