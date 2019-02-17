@@ -2,7 +2,7 @@ package logica;
 
 
 import datos.ModeloCRUD;
-import pojos.Arma;
+import org.bson.types.ObjectId;
 import pojos.Pojo;
 import ui.BarraBusqueda;
 import ui.BotonesCRUD;
@@ -13,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 import java.util.List;
 
 import static logica.ControladorCRUD.Origen.MODIFICAR;
@@ -33,13 +32,11 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
     public BarraBusqueda barraBusqueda;
     public ModeloCRUD<T> modeloCRUD;
     public VistaCRUD<T> vistaCRUD;
-    public ArrayList<T> listaDatos;
     public T datoPantalla;
 
     public ControladorCRUD(ModeloCRUD<T> modeloCRUD, VistaCRUD<T> vistaCRUD) {
         this.modeloCRUD = modeloCRUD;
         this.vistaCRUD = vistaCRUD;
-        listaDatos = new ArrayList<>();
 
         inicializar();
         ponerListeners();
@@ -57,6 +54,7 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
         jList = vistaCRUD.getLista();
         modeloLista = new DefaultListModel<>();
         jList.setModel(modeloLista);
+        datoPantalla = nuevoDatoVacio();
 
         cargarLista(modeloCRUD.cogerTodo());
         itemSeleccionado(false);
@@ -68,7 +66,24 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
      que ocurren. A algunos se les ha dado una implementacion base porque se
      ha considerado que no siempre es necesario modificar su comportamiento
      */
-    public abstract boolean clickEnGuardar();
+
+
+    // todo: comprobar si funciona
+    public boolean clickEnGuardar() {
+//        T dato;
+//
+//        if (origen.equals(MODIFICAR)) {
+//            dato = extraerDatos(datoPantalla.getId());
+//            return modeloCRUD.modificar(dato);
+//        } else {
+//            dato = extraerDatos(null);
+//            return modeloCRUD.guardar(dato);
+//        }
+
+        return origen.equals(MODIFICAR) ?
+                modeloCRUD.modificar(extraerDatos(datoPantalla.getId())) :
+                modeloCRUD.guardar(extraerDatos(null));
+    }
 
     public boolean clickEnCancelar() {
         return true;
@@ -94,10 +109,15 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
         return modeloCRUD.deshacer();
     }
 
-    // Metodos para interactuar con la UI
+    // METODOS PARA INTERACTUAR CON LA INTERFAZ DE USUARIO
+    // Cargar datos en la pantalla
     public abstract boolean cargarDatos();
-    public abstract T extraerDatos();
+
+    // Vaciar la pantalla de informacion
     public abstract void limpiarPantalla();
+
+    // Convertir la informacion de la pantalla en un objeto
+    public abstract T extraerDatos(ObjectId id);
 
     // Metodo para notificar de los cambios realizados a entidades relacionadas
     public abstract void datosCambiados();
@@ -173,6 +193,11 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
         datosCambiados();
     }
 
+//    public void operacionCompletada() {
+//        cargarLista(modeloCRUD.cogerTodo());
+//        datosCambiados();
+//    }
+
     public void cargarLista(List<T> lista) {
         modeloLista.clear();
         lista.forEach(modeloLista::addElement);
@@ -180,7 +205,7 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
 
     @Override
     public void buscar(String cadena) {
-        cargarLista(modeloCRUD.coger(cadena));
+        cargarLista(modeloCRUD.buscarPorNombre(cadena));
     }
 
     public void setModoEdicion(boolean modo) {
@@ -191,7 +216,6 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
     public void itemSeleccionado(boolean seleccionado) {
         botonesCRUD.modificarButton.setEnabled(seleccionado);
         botonesCRUD.cancelarButton.setEnabled(seleccionado);
-        botonesCRUD.eliminarTodoButton.setEnabled(seleccionado);
     }
 
     @Override

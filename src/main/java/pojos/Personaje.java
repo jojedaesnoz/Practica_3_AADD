@@ -1,5 +1,6 @@
 package pojos;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Personaje extends Pojo {
@@ -8,7 +9,17 @@ public class Personaje extends Pojo {
     private Movimiento movimiento;
     private List<Arma> armas;
 
+
+    {
+        armas = new ArrayList<>();
+    }
+
+
     public Personaje() {
+    }
+
+    public Personaje(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getNombre() {
@@ -46,5 +57,14 @@ public class Personaje extends Pojo {
     @Override
     public String toString() {
         return nombre;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (!(obj instanceof Personaje))
+            return false;
+        return ((Personaje) obj).getId().equals(this.id);
     }
 }

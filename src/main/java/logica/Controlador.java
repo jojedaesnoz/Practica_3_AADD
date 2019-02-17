@@ -15,9 +15,9 @@ public class Controlador {
     ControladorMovimientos controladorMovimientos;
 
     public Controlador(Modelo modelo, Vista vista) {
-        controladorArmas = new ControladorArmas(modelo.modeloArmas, vista.armasUI, this);
-        controladorPersonajes = new ControladorPersonajes(modelo.modeloPersonajes, vista.personajesUI, this);
-        controladorMovimientos = new ControladorMovimientos(modelo.modeloMovimientos, vista.movimientosUI, this);
+        controladorArmas = new ControladorArmas(modelo, vista.armasUI, this);
+        controladorPersonajes = new ControladorPersonajes(modelo, vista.personajesUI, this);
+        controladorMovimientos = new ControladorMovimientos(modelo, vista.movimientosUI, this);
 
         controladorArmas.datosCambiados();
         controladorMovimientos.datosCambiados();
@@ -25,14 +25,14 @@ public class Controlador {
     }
 
     public void armasCambiadas(ArrayList<Arma> armas) {
-        controladorPersonajes.cargarMultiComboArmas(armas);
+        controladorPersonajes.cambioEnArmas(armas);
     }
 
     public void personajesCambiados(ArrayList<Personaje> personajes) {
-        controladorMovimientos.cargarComboPersonajes(personajes);
+        controladorMovimientos.cambioEnPersonajes(personajes);
     }
 
     public void movimientosCambiados(ArrayList<Movimiento> movimientos) {
-        controladorPersonajes.cargarComboMovimientos(movimientos);
+        controladorPersonajes.cambioEnMovimientos(movimientos);
     }
 }

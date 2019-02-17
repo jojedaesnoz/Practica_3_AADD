@@ -4,8 +4,10 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
+import org.bson.conversions.Bson;
 import pojos.Pojo;
 
 import java.util.ArrayList;
@@ -44,8 +46,10 @@ public class ModeloCRUD<T extends Pojo> {
         return collection.find().into(new ArrayList<>());
     }
 
-    public List<T> coger(String busqueda) {
-        return collection.find(regex("nombre", ".*" + busqueda + ".*")).into(new ArrayList<>());
+    public List<T> buscarPorNombre(String busqueda) {
+        // Devuelve una lista con documentos cuyo nombre contenga la cadena de busqueda (case insensitive)
+        return collection.find(regex("nombre", ".*" + busqueda + ".*", "i"))
+                .into(new ArrayList<>());
     }
 
     public boolean modificar(T dato) {

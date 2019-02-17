@@ -43,7 +43,10 @@ public class MultiCombo<T> implements ActionListener {
     }
 
     public List<T> getListItems() {
-        return new ArrayList<>(Arrays.asList((T[]) modelo.toArray()));
+        if (!modelo.isEmpty())
+            return new ArrayList<>(Arrays.asList((T[]) modelo.toArray()));
+        else
+            return new ArrayList<>();
     }
 
     public void setListItems(List<T> items) {

@@ -4,9 +4,12 @@ public class Movimiento extends Pojo {
     private String nombre;
     private int energia;
     private int nivel;
-    private Personaje personaje;
 
     public Movimiento() {
+    }
+    
+    public Movimiento(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getNombre() {
@@ -25,14 +28,6 @@ public class Movimiento extends Pojo {
         this.energia = energia;
     }
 
-    public Personaje getPersonaje() {
-        return personaje;
-    }
-
-    public void setPersonaje(Personaje personaje) {
-        this.personaje = personaje;
-    }
-
     public int getNivel() {
         return nivel;
     }
@@ -44,5 +39,15 @@ public class Movimiento extends Pojo {
     @Override
     public String toString() {
         return nombre;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (!(obj instanceof Movimiento))
+            return false;
+        return ((Movimiento) obj).getId().equals(this.id);
     }
 }

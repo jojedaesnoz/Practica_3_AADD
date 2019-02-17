@@ -1,12 +1,28 @@
 package pojos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Arma extends Pojo{
+
+
+    public enum Rareza {
+        COMUN, EXCEPCIONAL, EPICA, LEGENDARIA;
+    }
     private String nombre;
     private int ataque;
-    private int rareza;
-    private int durabilidad;
+    private Rareza rareza;
+    private List<Personaje> personajes;
+
+    {
+        personajes = new ArrayList<>();
+    }
 
     public Arma() {
+    }
+    
+    public Arma(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getNombre() {
@@ -25,24 +41,34 @@ public class Arma extends Pojo{
         this.ataque = ataque;
     }
 
-    public int getRareza() {
+    public Rareza getRareza() {
         return rareza;
     }
 
-    public void setRareza(int rareza) {
+    public void setRareza(Rareza rareza) {
         this.rareza = rareza;
     }
 
-    public int getDurabilidad() {
-        return durabilidad;
+    public List<Personaje> getPersonajes() {
+        return personajes;
     }
 
-    public void setDurabilidad(int durabilidad) {
-        this.durabilidad = durabilidad;
+    public void setPersonajes(List<Personaje> personajes) {
+        this.personajes = personajes;
     }
 
     @Override
     public String toString() {
         return nombre;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
+        if (!(obj instanceof Arma))
+            return false;
+        return ((Arma) obj).getId().equals(this.id);
     }
 }
