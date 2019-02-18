@@ -1,0 +1,9 @@
+
+
+
+Para la relación 1 a 1 entre Personaje y Movimiento, se ha decidido incrustar
+Movimiento como un campo de Personaje.
+
+Para la relación N a M entre Personaje y Arma, se incluyen referencias
+bidireccionalmente. Personaje tiene una lista de identificadores de Arma y
+Arma contiene una lista de identificadores de Personaje.

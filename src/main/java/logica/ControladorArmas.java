@@ -7,15 +7,20 @@ import pojos.Personaje;
 import ui.ArmasUI;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 public class ControladorArmas extends ControladorCRUD<Arma> {
 
+    private Modelo modelo;
     public ArmasUI vista;
     private Controlador controlador;
 
     public ControladorArmas(Modelo modelo, ArmasUI vista, Controlador controlador) {
         super(modelo.modeloArmas, vista);
+        this.modelo = modelo;
         this.vista = vista;
         this.controlador = controlador;
     }
@@ -31,7 +36,23 @@ public class ControladorArmas extends ControladorCRUD<Arma> {
         vista.nombreTextField.setText(datoPantalla.getNombre());
         vista.ataqueTextField.setText(String.valueOf(datoPantalla.getAtaque()));
         vista.rarezaComboBox.setSelectedItem(datoPantalla.getRareza());
-        vista.personajesMultiCombo.setListItems(datoPantalla.getPersonajes());
+//        vista.personajesMultiCombo.setListItems(datoPantalla.getPersonajes());
+
+//        ArrayList<Personaje> personajes = new ArrayList<>();
+//        for (ObjectId personajeId : datoPantalla.getPersonajes()) {
+//            Personaje personaje = modelo.modeloPersonajes.buscarPorId(personajeId);
+//            personajes.add(personaje);
+//        }
+//        vista.personajesMultiCombo.setListItems(personajes);
+
+
+        vista.personajesMultiCombo.setListItems(
+                datoPantalla.getPersonajes().stream()
+                .map(id -> modelo.modeloPersonajes.buscarPorId(id))
+                .sorted()
+                .collect(Collectors.toList()));
+        datoPantalla.getPersonajes().forEach(System.out::println);
+
         return true;
     }
 
@@ -55,7 +76,23 @@ public class ControladorArmas extends ControladorCRUD<Arma> {
         arma.setNombre(!textoNombre.isEmpty() ? textoNombre : "Sin nombre");
         arma.setAtaque(!textoAtaque.isEmpty() ? Integer.parseInt(textoAtaque) : 0);
         arma.setRareza((Arma.Rareza) vista.rarezaComboBox.getSelectedItem());
-        arma.setPersonajes(vista.personajesMultiCombo.getListItems());
+//        arma.setPersonajes(vista.personajesMultiCombo.getListItems()
+//                .stream().map(Personaje::getId).collect(Collectors.toList()));
+
+        /*
+        Asignar este arma a los personajes
+        Modificar los personajes para que se guarde el cambio
+        Asignar a este arma los ids de los personajes
+         */
+
+        for (Personaje personaje : vista.personajesMultiCombo.getListItems()) {
+            personaje.getArmas().add(id);
+            if (!personaje.getArmas().contains(id)) {
+                personaje.getArmas().add(id);
+                modelo.modeloPersonajes.modificar(personaje);
+                arma.getPersonajes().add(personaje.getId());
+            }
+        }
         return arma;
     }
 

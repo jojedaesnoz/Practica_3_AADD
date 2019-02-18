@@ -1,10 +1,15 @@
 package datos;
 
 import com.mongodb.client.FindIterable;
+import org.bson.types.ObjectId;
 import pojos.Arma;
 import pojos.Movimiento;
 import pojos.Personaje;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.mongodb.client.model.Filters.elemMatch;
 import static com.mongodb.client.model.Filters.eq;
 
 public class Modelo {
@@ -19,7 +24,11 @@ public class Modelo {
         modeloMovimientos = new ModeloCRUD<>("movimientos", Movimiento.class);
     }
 
-    public Personaje buscarPersonajeSegunMovimiento(Movimiento movimiento) {
-        return modeloPersonajes.collection.find(eq("movimiento._id", movimiento.getId())).first();
+    public Personaje getPersonajeWhereIdMovimiento(ObjectId movimientoId) {
+        return modeloPersonajes.collection.find(eq("movimiento._id", movimientoId)).first();
+    }
+
+    public List<Personaje> getPersonajeWhereIdArma(ObjectId armaId) {
+        return modeloPersonajes.collection.find(elemMatch("armas", eq(armaId))).into(new ArrayList<>());
     }
 }

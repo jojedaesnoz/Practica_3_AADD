@@ -9,6 +9,7 @@ import ui.PersonajesUI;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ControladorPersonajes extends ControladorCRUD<Personaje> {
 
@@ -40,7 +41,15 @@ public class ControladorPersonajes extends ControladorCRUD<Personaje> {
     public boolean cargarDatos() {
         vista.nombreTextField.setText(datoPantalla.getNombre());
         vista.movimientoComboBox.setSelectedItem(datoPantalla.getMovimiento());
-        vista.armasMultiCombo.setListItems(datoPantalla.getArmas());
+
+//        vista.armasMultiCombo.setListItems(datoPantalla.getArmas());
+
+        vista.armasMultiCombo.setListItems(
+                datoPantalla.getArmas().stream()
+                .map(idArma -> modelo.modeloArmas.buscarPorId(idArma))
+                .sorted()
+                .collect(Collectors.toList()));
+
         vista.vidaTextField.setText(String.valueOf(datoPantalla.getVida()));
         return true;
     }
@@ -52,13 +61,12 @@ public class ControladorPersonajes extends ControladorCRUD<Personaje> {
 
         String textoNombre = vista.nombreTextField.getText();
         Movimiento movimiento = (Movimiento) vista.movimientoComboBox.getSelectedItem();
-        List<Arma> armasList = vista.armasMultiCombo.getListItems();
         String textoVida = vista.vidaTextField.getText();
 
         /* Si el movimiento anteriormente pertenecia a otro personaje,
         deja de hacerlo y es asignado al nuevo personaje */
         if (movimiento != null) {
-            Personaje antiguo = modelo.buscarPersonajeSegunMovimiento(movimiento);
+            Personaje antiguo = modelo.getPersonajeWhereIdMovimiento(movimiento.getId());
             if (antiguo != null && !antiguo.equals(personaje)) {
                 antiguo.setMovimiento(null);
                 modeloCRUD.modificar(antiguo);
@@ -67,7 +75,20 @@ public class ControladorPersonajes extends ControladorCRUD<Personaje> {
         }
 
         personaje.setNombre(!textoNombre.isEmpty() ? textoNombre : "Sin nombre");
-        personaje.setArmas(armasList);
+//        List<Arma> armasList = vista.armasMultiCombo.getListItems();
+//        personaje.setArmas(armasList);
+
+//        personaje.setArmas(vista.armasMultiCombo.getListItems().stream()
+//                .map(Arma::getId).collect(Collectors.toList()));
+
+        for (Arma arma : vista.armasMultiCombo.getListItems()) {
+            if (!personaje.getArmas().contains(arma.getId())) {
+                arma.getPersonajes().add(personaje.getId());
+                modelo.modeloArmas.modificar(arma);
+                personaje.getArmas().add(arma.getId());
+            }
+        }
+
         personaje.setVida(!textoVida.isEmpty() ? Integer.parseInt(textoVida) : 0);
 
         return personaje;

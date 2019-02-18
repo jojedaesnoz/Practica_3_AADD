@@ -1,9 +1,11 @@
 package pojos;
 
+import org.bson.types.ObjectId;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Arma extends Pojo{
+public class Arma extends Pojo implements Comparable<Arma> {
 
 
     public enum Rareza {
@@ -12,7 +14,7 @@ public class Arma extends Pojo{
     private String nombre;
     private int ataque;
     private Rareza rareza;
-    private List<Personaje> personajes;
+    private List<ObjectId> personajes;
 
     {
         personajes = new ArrayList<>();
@@ -49,11 +51,11 @@ public class Arma extends Pojo{
         this.rareza = rareza;
     }
 
-    public List<Personaje> getPersonajes() {
+    public List<ObjectId> getPersonajes() {
         return personajes;
     }
 
-    public void setPersonajes(List<Personaje> personajes) {
+    public void setPersonajes(List<ObjectId> personajes) {
         this.personajes = personajes;
     }
 
@@ -70,5 +72,10 @@ public class Arma extends Pojo{
         if (!(obj instanceof Arma))
             return false;
         return ((Arma) obj).getId().equals(this.id);
+    }
+
+    @Override
+    public int compareTo(Arma o) {
+        return this.nombre.compareTo(o.nombre);
     }
 }

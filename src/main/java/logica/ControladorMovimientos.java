@@ -6,7 +6,6 @@ import pojos.Movimiento;
 import pojos.Personaje;
 import ui.MovimientosUI;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ControladorMovimientos extends ControladorCRUD<Movimiento> {
@@ -40,7 +39,7 @@ public class ControladorMovimientos extends ControladorCRUD<Movimiento> {
 
         // TODO: coger el personaje que tiene este movimiento como suyo, tal vez se pueda hacer desde personajes?
 //        personaje = modelo.modeloPersonajes.co
-        vista.personajeComboBox.setSelectedItem(modelo.buscarPersonajeSegunMovimiento(datoPantalla));
+        vista.personajeComboBox.setSelectedItem(modelo.getPersonajeWhereIdMovimiento(datoPantalla.getId()));
         vista.nivelTextField.setText(String.valueOf(datoPantalla.getNivel()));
         return true;
     }
@@ -62,7 +61,7 @@ public class ControladorMovimientos extends ControladorCRUD<Movimiento> {
         if (personaje != null) {
             /* Si el movimiento anteriormente pertenecia a otro personaje,
              deja de hacerlo y es asignado al nuevo personaje */
-            Personaje antiguo = modelo.buscarPersonajeSegunMovimiento(movimiento);
+            Personaje antiguo = modelo.getPersonajeWhereIdMovimiento(movimiento.getId());
             if (antiguo != null && !antiguo.equals(personaje)) {
                 antiguo.setMovimiento(null);
                 modelo.modeloPersonajes.modificar(antiguo);

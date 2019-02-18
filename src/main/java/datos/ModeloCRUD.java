@@ -5,15 +5,19 @@ import com.mongodb.MongoClientOptions;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.Updates;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 import org.bson.conversions.Bson;
+import org.bson.types.ObjectId;
 import pojos.Pojo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.mongodb.client.model.Filters.*;
+import static com.mongodb.client.model.Updates.combine;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
@@ -41,6 +45,11 @@ public class ModeloCRUD<T extends Pojo> {
         collection.insertOne(dato);
         return true;
     }
+
+    public boolean guardar(List<T> datos) {
+        collection.insertMany(datos);
+        return true;
+    }
     
     public List<T> cogerTodo() {
         return collection.find().into(new ArrayList<>());
@@ -50,6 +59,12 @@ public class ModeloCRUD<T extends Pojo> {
         // Devuelve una lista con documentos cuyo nombre contenga la cadena de busqueda (case insensitive)
         return collection.find(regex("nombre", ".*" + busqueda + ".*", "i"))
                 .into(new ArrayList<>());
+    }
+
+    public T buscarPorId(ObjectId id) {
+//        return collection.find(eq(id)).into(new ArrayList<>());
+//        return collection.find(eq("_id", id)).into(new ArrayList<>());
+        return collection.find(eq("_id", id)).first();
     }
 
     public boolean modificar(T dato) {
