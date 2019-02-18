@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6eae954a-9801-4b11-b332-0f897285c3e5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datos/Modelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datos/Modelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datos/ModeloCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datos/ModeloCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/ControladorMovimientos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/ControladorMovimientos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logica/ControladorPersonajes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/ControladorPersonajes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojos/Arma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojos/Arma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pojos/Personaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pojos/Personaje.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="79" selection-end-column="47" />
+            <state relative-caret-position="264">
+              <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,14 +27,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorPersonajes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="81" selection-end-column="35" />
+            <state relative-caret-position="364">
+              <caret line="84" column="49" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3933#3934#0" expanded="true" />
+                <element signature="e#3923#3924#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorMovimientos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-80">
+            <state relative-caret-position="619">
               <caret line="41" column="105" selection-start-line="41" selection-start-column="105" selection-end-line="41" selection-end-column="105" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -188,8 +181,8 @@
         <option value="$PROJECT_DIR$/src/main/java/pojos/Personaje.java" />
         <option value="$PROJECT_DIR$/src/main/java/datos/ModeloCRUD.java" />
         <option value="$PROJECT_DIR$/src/main/java/pojos/Arma.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logica/ControladorPersonajes.java" />
         <option value="$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java" />
+        <option value="$PROJECT_DIR$/src/main/java/logica/ControladorPersonajes.java" />
       </list>
     </option>
   </component>
@@ -283,7 +276,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="376" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="338" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550493699212" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550495800871" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
@@ -728,7 +721,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorMovimientos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
+        <state relative-caret-position="619">
           <caret line="41" column="105" selection-start-line="41" selection-start-column="105" selection-end-line="41" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -740,23 +733,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorPersonajes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="81" selection-end-column="35" />
+        <state relative-caret-position="264">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3933#3934#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorArmas.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/logica/ControladorPersonajes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="78" column="48" selection-start-line="78" selection-start-column="48" selection-end-line="79" selection-end-column="47" />
+        <state relative-caret-position="364">
+          <caret line="84" column="49" selection-start-line="84" selection-start-column="49" selection-end-line="84" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3923#3924#0" expanded="true" />
           </folding>
         </state>
       </provider>

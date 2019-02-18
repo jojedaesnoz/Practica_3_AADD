@@ -48,8 +48,8 @@ public class ControladorArmas extends ControladorCRUD<Arma> {
 
         vista.personajesMultiCombo.setListItems(
                 datoPantalla.getPersonajes().stream()
-                .map(id -> modelo.modeloPersonajes.buscarPorId(id))
                 .sorted()
+                .map(id -> modelo.modeloPersonajes.buscarPorId(id))
                 .collect(Collectors.toList()));
         datoPantalla.getPersonajes().forEach(System.out::println);
 
@@ -58,6 +58,7 @@ public class ControladorArmas extends ControladorCRUD<Arma> {
 
     public void cambioEnPersonajes(List<Personaje> personajes) {
         vista.personajesMultiCombo.setComboOptions(personajes);
+        cargarLista(modeloCRUD.cogerTodo());
     }
 
     @Override
@@ -86,7 +87,6 @@ public class ControladorArmas extends ControladorCRUD<Arma> {
          */
 
         for (Personaje personaje : vista.personajesMultiCombo.getListItems()) {
-            personaje.getArmas().add(id);
             if (!personaje.getArmas().contains(id)) {
                 personaje.getArmas().add(id);
                 modelo.modeloPersonajes.modificar(personaje);
