@@ -31,17 +31,11 @@ public class ControladorMovimientos extends ControladorCRUD<Movimiento> {
     }
 
     @Override
-    public boolean cargarDatos() {
+    public void cargarDatos() {
         vista.nombreTextField.setText(datoPantalla.getNombre());
         vista.energiaTextField.setText(String.valueOf(datoPantalla.getEnergia()));
-//        vista.personajeComboBox.setSelectedItem(datoPantalla.getPersonaje());
-        Personaje personaje;
-
-        // TODO: coger el personaje que tiene este movimiento como suyo, tal vez se pueda hacer desde personajes?
-//        personaje = modelo.modeloPersonajes.co
-        vista.personajeComboBox.setSelectedItem(modelo.getPersonajeWhereIdMovimiento(datoPantalla.getId()));
+        vista.personajeComboBox.setSelectedItem(modelo.buscarPersonajePorIdMovimiento(datoPantalla.getId()));
         vista.nivelTextField.setText(String.valueOf(datoPantalla.getNivel()));
-        return true;
     }
 
     @Override
@@ -51,17 +45,23 @@ public class ControladorMovimientos extends ControladorCRUD<Movimiento> {
 
         String textoNombre = vista.nombreTextField.getText();
         String textoEnergia = vista.energiaTextField.getText();
-        Personaje personaje = (Personaje) vista.personajeComboBox.getSelectedItem();
         String textoNivel = vista.nivelTextField.getText();
 
         movimiento.setNombre(!textoNombre.isEmpty() ? textoNombre : "Sin nombre");
         movimiento.setEnergia(!textoEnergia.isEmpty() ? Integer.parseInt(textoEnergia) : 0);
         movimiento.setNivel(!textoNivel.isEmpty() ? Integer.parseInt(textoNivel) : 0);
 
+        propagarCambioPersonaje(movimiento);
+
+        return movimiento;
+    }
+
+    private void propagarCambioPersonaje(Movimiento movimiento) {
+        Personaje personaje = (Personaje) vista.personajeComboBox.getSelectedItem();
         if (personaje != null) {
             /* Si el movimiento anteriormente pertenecia a otro personaje,
              deja de hacerlo y es asignado al nuevo personaje */
-            Personaje antiguo = modelo.getPersonajeWhereIdMovimiento(movimiento.getId());
+            Personaje antiguo = modelo.buscarPersonajePorIdMovimiento(movimiento.getId());
             if (antiguo != null && !antiguo.equals(personaje)) {
                 antiguo.setMovimiento(null);
                 modelo.modeloPersonajes.modificar(antiguo);
@@ -69,8 +69,6 @@ public class ControladorMovimientos extends ControladorCRUD<Movimiento> {
             personaje.setMovimiento(movimiento);
             modelo.modeloPersonajes.modificar(personaje);
         }
-
-        return movimiento;
     }
 
     @Override

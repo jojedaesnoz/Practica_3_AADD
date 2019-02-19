@@ -4,20 +4,16 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Filters;
-import com.mongodb.client.model.Updates;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
-import org.bson.conversions.Bson;
 import org.bson.types.ObjectId;
 import pojos.Pojo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.mongodb.client.model.Filters.*;
-import static com.mongodb.client.model.Updates.combine;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
@@ -62,9 +58,15 @@ public class ModeloCRUD<T extends Pojo> {
     }
 
     public T buscarPorId(ObjectId id) {
-//        return collection.find(eq(id)).into(new ArrayList<>());
-//        return collection.find(eq("_id", id)).into(new ArrayList<>());
         return collection.find(eq("_id", id)).first();
+    }
+
+    public List<T> buscarPorIds(ObjectId... ids) {
+        return buscarPorIds(Arrays.asList(ids));
+    }
+
+    public List<T> buscarPorIds(List<ObjectId> ids) {
+        return collection.find(in("_id", ids)).into(new ArrayList<>());
     }
 
     public boolean modificar(T dato) {

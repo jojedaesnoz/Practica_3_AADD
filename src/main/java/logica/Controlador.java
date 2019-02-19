@@ -1,12 +1,7 @@
 package logica;
 
 import datos.Modelo;
-import pojos.Arma;
-import pojos.Movimiento;
-import pojos.Personaje;
 import ui.Vista;
-
-import java.util.ArrayList;
 
 public class Controlador {
 
@@ -22,17 +17,5 @@ public class Controlador {
         controladorArmas.datosCambiados();
         controladorMovimientos.datosCambiados();
         controladorPersonajes.datosCambiados();
-    }
-
-    public void armasCambiadas(ArrayList<Arma> armas) {
-        controladorPersonajes.cambioEnArmas(armas);
-    }
-
-    public void personajesCambiados(ArrayList<Personaje> personajes) {
-        controladorMovimientos.cambioEnPersonajes(personajes);
-    }
-
-    public void movimientosCambiados(ArrayList<Movimiento> movimientos) {
-        controladorPersonajes.cambioEnMovimientos(movimientos);
     }
 }

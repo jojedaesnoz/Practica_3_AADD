@@ -7,10 +7,7 @@ import pojos.Personaje;
 import ui.ArmasUI;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 public class ControladorArmas extends ControladorCRUD<Arma> {
 
@@ -32,28 +29,11 @@ public class ControladorArmas extends ControladorCRUD<Arma> {
 
 
     @Override
-    public boolean cargarDatos() {
+    public void cargarDatos() {
         vista.nombreTextField.setText(datoPantalla.getNombre());
         vista.ataqueTextField.setText(String.valueOf(datoPantalla.getAtaque()));
         vista.rarezaComboBox.setSelectedItem(datoPantalla.getRareza());
-//        vista.personajesMultiCombo.setListItems(datoPantalla.getPersonajes());
-
-//        ArrayList<Personaje> personajes = new ArrayList<>();
-//        for (ObjectId personajeId : datoPantalla.getPersonajes()) {
-//            Personaje personaje = modelo.modeloPersonajes.buscarPorId(personajeId);
-//            personajes.add(personaje);
-//        }
-//        vista.personajesMultiCombo.setListItems(personajes);
-
-
-        vista.personajesMultiCombo.setListItems(
-                datoPantalla.getPersonajes().stream()
-                .sorted()
-                .map(id -> modelo.modeloPersonajes.buscarPorId(id))
-                .collect(Collectors.toList()));
-        datoPantalla.getPersonajes().forEach(System.out::println);
-
-        return true;
+        vista.personajesMultiCombo.setListItems(modelo.modeloPersonajes.buscarPorIds(datoPantalla.getPersonajes()));
     }
 
     public void cambioEnPersonajes(List<Personaje> personajes) {
@@ -77,23 +57,37 @@ public class ControladorArmas extends ControladorCRUD<Arma> {
         arma.setNombre(!textoNombre.isEmpty() ? textoNombre : "Sin nombre");
         arma.setAtaque(!textoAtaque.isEmpty() ? Integer.parseInt(textoAtaque) : 0);
         arma.setRareza((Arma.Rareza) vista.rarezaComboBox.getSelectedItem());
-//        arma.setPersonajes(vista.personajesMultiCombo.getListItems()
-//                .stream().map(Personaje::getId).collect(Collectors.toList()));
 
-        /*
-        Asignar este arma a los personajes
-        Modificar los personajes para que se guarde el cambio
-        Asignar a este arma los ids de los personajes
-         */
+        propagarCambioPersonaje(arma);
 
-        for (Personaje personaje : vista.personajesMultiCombo.getListItems()) {
-            if (!personaje.getArmas().contains(id)) {
-                personaje.getArmas().add(id);
-                modelo.modeloPersonajes.modificar(personaje);
-                arma.getPersonajes().add(personaje.getId());
-            }
-        }
         return arma;
+    }
+
+    private void propagarCambioPersonaje(Arma arma) {
+        // Personajes asociados a este arma anteriormente y personajes que nos devuelve la vista
+        List<Personaje> antiguos = modelo.modeloPersonajes.buscarPorIds(datoPantalla.getPersonajes());
+        List<Personaje> nuevos = vista.personajesMultiCombo.getListItems();
+
+        // Guardar los personajes que no estaban antes y propagar el cambio
+        List<Personaje> paraGuardar = new ArrayList<>(nuevos);
+        paraGuardar.removeAll(antiguos);
+        for (Personaje personaje : paraGuardar) {
+            personaje.getArmas().add(arma.getId());
+            modelo.modeloPersonajes.modificar(personaje);
+            datoPantalla.getPersonajes().add(personaje.getId());
+        }
+
+        // Borrar los personajes que ya no estan y propagar el cambio
+        List<Personaje> paraBorrar = new ArrayList<>(antiguos);
+        paraBorrar.removeAll(nuevos);
+        for (Personaje personaje : paraBorrar) {
+            personaje.getArmas().remove(arma.getId());
+            modelo.modeloPersonajes.modificar(personaje);
+            datoPantalla.getPersonajes().remove(personaje.getId());
+        }
+
+        // Asignar la nueva lista de personajes al arma
+        arma.setPersonajes(datoPantalla.getPersonajes());
     }
 
     @Override

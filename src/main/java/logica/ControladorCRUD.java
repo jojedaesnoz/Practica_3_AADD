@@ -61,25 +61,10 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
         setModoEdicion(false);
     }
 
-    /*
-     Estos metodos se utilizan para comunicar a la clase hija de los eventos
-     que ocurren. A algunos se les ha dado una implementacion base porque se
-     ha considerado que no siempre es necesario modificar su comportamiento
-     */
+    /* Estos metodos se utilizan para comunicar a la clase hija de los eventos
+     que ocurren. Se les ha dado una implementacion por defecto. */
 
-
-    // todo: comprobar si funciona
     public boolean clickEnGuardar() {
-//        T dato;
-//
-//        if (origen.equals(MODIFICAR)) {
-//            dato = extraerDatos(datoPantalla.getId());
-//            return modeloCRUD.modificar(dato);
-//        } else {
-//            dato = extraerDatos(null);
-//            return modeloCRUD.guardar(dato);
-//        }
-
         return origen.equals(MODIFICAR) ?
                 modeloCRUD.modificar(extraerDatos(datoPantalla.getId())) :
                 modeloCRUD.guardar(extraerDatos(null));
@@ -111,7 +96,7 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
 
     // METODOS PARA INTERACTUAR CON LA INTERFAZ DE USUARIO
     // Cargar datos en la pantalla
-    public abstract boolean cargarDatos();
+    public abstract void cargarDatos();
 
     // Vaciar la pantalla de informacion
     public abstract void limpiarPantalla();
@@ -193,11 +178,6 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
         datosCambiados();
     }
 
-//    public void operacionCompletada() {
-//        cargarLista(modeloCRUD.cogerTodo());
-//        datosCambiados();
-//    }
-
     public void cargarLista(List<T> lista) {
         modeloLista.clear();
         lista.forEach(modeloLista::addElement);
@@ -230,19 +210,14 @@ public abstract class ControladorCRUD<T extends Pojo> implements ActionListener,
 
     // LISTENERS VACIOS
     @Override
-    public void mousePressed(MouseEvent e) {
+    public void mousePressed(MouseEvent e) {}
 
-    }
     @Override
-    public void mouseReleased(MouseEvent e) {
+    public void mouseReleased(MouseEvent e) {}
 
-    }
     @Override
-    public void mouseEntered(MouseEvent e) {
+    public void mouseEntered(MouseEvent e) {}
 
-    }
     @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
+    public void mouseExited(MouseEvent e) {}
 }
